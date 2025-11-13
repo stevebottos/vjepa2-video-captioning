@@ -1,5 +1,11 @@
 *.pt
 results/
+create_captioned_gifs.sh
+download_densevid.py
+ssv2_paraphrase.json
+test_vjepa.py
+.archive
+.python_version
 
 # Python-generated files
 __pycache__/
