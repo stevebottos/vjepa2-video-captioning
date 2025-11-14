@@ -1,13 +1,13 @@
-# V-JEPA Video Captioning
+# V-JEPA 2 Video Captioning
 
-A proof-of-concept implementation of BLIP-2's vision-language alignment method adapted for video captioning. This project demonstrates how a frozen vision encoder (V-JEPA) and frozen language model (Qwen2-1.5B) can be efficiently aligned using a lightweight Q-Former module trained on the Something-Something-V2 dataset.
+A proof-of-concept implementation of BLIP-2's vision-language alignment method adapted for video captioning. This project demonstrates how a frozen vision encoder (V-JEPA 2) and frozen language model (Qwen2-1.5B) can be efficiently aligned using a lightweight Q-Former module trained on the Something-Something-V2 dataset.
 
 ## Overview
 
 This approach:
-- Uses Meta's V-JEPA (Vision Joint-Embedding Predictive Architecture) as the frozen vision encoder
+- Uses Meta's V-JEPA 2 as the frozen vision encoder
 - Uses Qwen2-1.5B as the frozen language model
-- Trains only a Q-Former module (~4M parameters) to bridge vision and language modalities
+- Trains only a Q-Former module (~40M parameters) to bridge vision and language modalities
 - Achieves strong video captioning results with minimal trainable parameters
 
 The key insight from BLIP-2 is that by keeping both the vision and language models frozen, we can learn an efficient alignment with far fewer parameters and compute than end-to-end training.
@@ -28,7 +28,7 @@ Download the Something-Something-V2 dataset from [the official website](https://
 
 ### 2. Preprocess Video Features (Recommended)
 
-Since V-JEPA is frozen during training, precompute the features to avoid loading the vision model in VRAM and speed up training:
+Since V-JEPA 2 is frozen during training, precompute the features to avoid loading the vision model in VRAM and speed up training:
 
 ```bash
 python preprocess_something_something_v2.py
