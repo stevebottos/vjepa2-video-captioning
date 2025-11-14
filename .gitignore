@@ -5,7 +5,9 @@ download_densevid.py
 ssv2_paraphrase.json
 test_vjepa.py
 .archive
-.python_version
+.python-version
+uv.lock
+scratch.py 
 
 # Python-generated files
 __pycache__/
