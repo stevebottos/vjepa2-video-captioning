@@ -79,7 +79,7 @@ Run full evaluation with standard captioning metrics:
 python evaluate.py
 ```
 
-This computes BLEU, METEOR, ROUGE-L, and CIDEr scores on the validation set.
+This computes BLEU, METEOR, ROUGE-L, and CIDEr scores on the validation set... Caveat: CIDEr is the only one that I think is loosely worth paying attention to, since the validation set is not really designed for captioning. Validation "captions" for SSV2 are not really "human-like".
 
 ## Inference
 
