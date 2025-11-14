@@ -12,6 +12,21 @@ This approach:
 
 The key insight from BLIP-2 is that by keeping both the vision and language models frozen, we can learn an efficient alignment with far fewer parameters and compute than end-to-end training.
 
+## Methodology
+
+![BLIP-2 Architecture](assets/image.png)
+*Architecture diagram from [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://arxiv.org/pdf/2301.12597)*
+
+This project adapts the BLIP-2 architecture for video captioning. The key adaptation is **replacing single image input with 32-frame video sequences**:
+
+1. **Video Encoder (Frozen)**: Instead of processing a single image through a frozen image encoder, we process 32-frame video clips through V-JEPA 2, Meta's video understanding model. This produces spatiotemporal features that capture both appearance and motion.
+
+2. **Q-Former (Trainable)**: The Q-Former module remains the core trainable component. It uses learned queries to extract the most relevant visual information from the video features, compressing the 32-frame sequence into a fixed set of query embeddings that bridge the vision and language modalities.
+
+3. **LLM Decoder (Frozen)**: The Q-Former outputs are fed into a frozen Qwen2-1.5B language model, which generates natural language captions describing the video content.
+
+By keeping both the video encoder and language model frozen, we only need to train the lightweight Q-Former (~40M parameters) to learn the vision-language alignment. This makes the approach highly parameter-efficient while leveraging the strong representations from both pretrained models.
+
 ## Installation
 
 ```bash
