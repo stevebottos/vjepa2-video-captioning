@@ -15,7 +15,7 @@ The key insight from BLIP-2 is that by keeping both the vision and language mode
 ## Methodology
 
 ![BLIP-2 Architecture](assets/image.png)
-*Architecture diagram from [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://arxiv.org/pdf/2301.12597)*
+*Architecture diagram from adapted from [BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models](https://arxiv.org/pdf/2301.12597)*
 
 This project adapts the BLIP-2 architecture for video captioning. The key adaptation is **replacing single image input with 32-frame video sequences**:
 
