@@ -2,6 +2,21 @@
 
 A proof-of-concept implementation of BLIP-2's vision-language alignment method adapted for video captioning. This project demonstrates how a frozen vision encoder (V-JEPA 2) and frozen language model (Qwen2-1.5B) can be efficiently aligned using a lightweight Q-Former module trained on the Something-Something-V2 dataset.
 
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; justify-items: center; align-items: center; margin: 0 auto; max-width: 800px;">
+  <div style="text-align: center;">
+    <img src="assets/170354.gif" alt="Example 1" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+  </div>
+  <div style="text-align: center;">
+    <img src="assets/174998.gif" alt="Example 2" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+  </div>
+  <div style="text-align: center;">
+    <img src="assets/184590.gif" alt="Example 3" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+  </div>
+  <div style="text-align: center;">
+    <img src="assets/198826.gif" alt="Example 4" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+  </div>
+</div>
+
 ## Overview
 
 This approach:
